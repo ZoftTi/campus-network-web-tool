@@ -32,10 +32,6 @@
   let containerLoginInput = document.querySelectorAll(".container-login .form-filed input")
   let containerLoginSubmit = document.querySelector("#loginsubmit") ? document.querySelector("#loginsubmit") : document.querySelector("#logoutsubmit")
 
-  let containerLeft = document.querySelector(".container-left")
-  let containerTop = document.querySelector(".container-top")
-  let containerGotohome = document.querySelector(".container-gotohome")
-
   if (document.querySelector(".mask")) document.querySelector(".mask").remove()
   if (document.querySelector(".modal")) document.querySelector(".modal").remove()
   if (document.querySelector(".buttom")) document.querySelector(".buttom").remove()
@@ -49,13 +45,16 @@
   if (document.querySelector(".modal2")) document.querySelector(".modal2").remove()
 
   if (resetUi) {
-    containerLeft.remove()
-    containerGotohome.remove()
-    containerTop.remove()
 
     body.style.background = "#ebecf2"
     body.style.boxSizing = "border-box"
 
+    if (document.querySelector(".container-left")) document.querySelector(".container-left").remove()
+    if (document.querySelector(".container-top")) document.querySelector(".container-top").remove()
+    if (document.querySelector(".container-gotohome")) document.querySelector(".container-gotohome").remove()
+    if (document.querySelector(".container-gotohome")) document.querySelector(".container-gotohome").remove()
+    if (document.querySelector(".announcement")) document.querySelector(".announcement").remove()
+  
     // logout 样式
     if (document.querySelectorAll(".container-login div p")[1]) {
       document.querySelectorAll('.container-login div p')[0].parentNode.setAttribute('style', 'padding: 40px 0px 0px 0px;')
@@ -72,7 +71,8 @@
     containerLogin.setAttribute("style","width: 370px; height: 420px; position: relative; background: #ffffff; box-sizing: border-box; color: #000000; border-radius: 25px")
 
     // 消息提示框样式
-    if (document.querySelector(".alert_msg")) {
+    if (document.querySelector(".alert_model")) {
+      document.querySelector(".alert_mask").remove()
       document.querySelector(".alert_msg").setAttribute("style","color: white; cursor: pointer; background-color: #7367f0; border-radius: 10px; box-shadow: 0 8px 25px -8px #7367f0; transition: box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;")
     }
 
@@ -105,9 +105,10 @@
   }
 
   if (window.location.href.indexOf("portal.do") != -1) {
-    document.querySelector("#read").checked = true
-    document.querySelector("#userid").value = username
-    document.querySelector("#passwd").value = password
+
+    if (document.querySelector("#read")) document.querySelector("#read").checked = true
+    if (document.querySelector("#userid")) document.querySelector("#userid").value = username
+    if (document.querySelector("#passwd")) document.querySelector("#passwd").value = password
 
     let loginInput = document.querySelector("#loginsubmit")
 
