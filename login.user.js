@@ -16,11 +16,11 @@
   // 美化 UI 界面
   let resetUi = true
   // 打开网页自动登录
-  let autoSubmitLogin = true
+  let autoSubmitLogin = false
   // 校园网账号
-  let username = '20181187'
+  let username = ''
   // 校园网密码
-  let password = '1377..'
+  let password = ''
 
   let body = document.querySelector("body")
   let container = document.querySelector(".container")
