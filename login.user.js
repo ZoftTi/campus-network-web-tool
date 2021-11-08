@@ -36,8 +36,6 @@
   let containerTop = document.querySelector(".container-top")
   let containerGotohome = document.querySelector(".container-gotohome")
 
-  let alertMessage = document.querySelector(".alert_msg")
-
   if (document.querySelector(".mask")) document.querySelector(".mask").remove()
   if (document.querySelector(".modal")) document.querySelector(".modal").remove()
   if (document.querySelector(".buttom")) document.querySelector(".buttom").remove()
@@ -74,7 +72,9 @@
     containerLogin.setAttribute("style","width: 370px; height: 420px; position: relative; background: #ffffff; box-sizing: border-box; color: #000000; border-radius: 25px")
 
     // 消息提示框样式
-    alertMessage.setAttribute("style","color: white; cursor: pointer; background-color: #7367f0; border-radius: 10px; box-shadow: 0 8px 25px -8px #7367f0; transition: box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;")
+    if (document.querySelector(".alert_msg")) {
+      document.querySelector(".alert_msg").setAttribute("style","color: white; cursor: pointer; background-color: #7367f0; border-radius: 10px; box-shadow: 0 8px 25px -8px #7367f0; transition: box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;")
+    }
 
     // 登录栏标题样式
     let title = document.createElement("h3")
